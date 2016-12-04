@@ -1,0 +1,58 @@
+
+menuconfig HCSRDRV
+		bool
+	prompt "HCSR Drivers"
+		default y
+		help
+			Include HCSR drivers in system config
+
+if HCSRDRV
+config HCSR_1_ECHO
+	prompt "Echo Pin for HCSR1 Device"
+	default 10
+	depends on HCSRDRV
+	int
+	help
+	  Specify echo pin for HCSR1 device
+
+config HCSR_1_TRIGGER
+	prompt "Trigger Pin for HCSR1 Device"
+	default 3
+	depends on HCSRDRV
+	int
+	help
+	  Specify trigger pin for HCSR1 device
+
+config HCSR_2_ECHO
+        prompt "Echo Pin for HCSR2 Device"
+        default 9
+        depends on HCSRDRV
+        int
+        help
+          Specify echo pin for HCSR2 device
+
+config HCSR_2_TRIGGER
+        prompt "Trigger Pin for HCSR2 Device"
+        default 4
+        depends on HCSRDRV
+        int
+        help
+          Specify trigger pin for HCSR2 device
+
+config HCSR_DRV_1_NAME
+	prompt "Device Name of HCSR1"
+	string
+	default "HCSR1"
+	depends on HCSRDRV
+	help
+	  Name of the device
+
+config HCSR_DRV_2_NAME
+	prompt "Device Name of HCSR2"
+	string
+	default "HCSR2"
+	depends on HCSRDRV
+        help
+          Name of the device
+
+endif
